@@ -57,25 +57,9 @@ public class FakeItemDataAccessService implements ItemDao {
             if (indexOfItemToUpdate >= 0) {
                 DB.set(indexOfItemToUpdate,
                         new Item(number, itm.getName(), update.getAmount(), itm.getInventoryCode()));
-                // DB.set(indexOfItemToUpdate,
-                // new Item(number, update.getName(), update.getAmount(),
-                // update.getInventoryCode()));
                 return 1;
             }
             return 0;
         }).orElse(0);
     }
-
-    // @Override
-    // public int updateItemAmountByNumber(Integer number, Integer newAmount) {
-    // return selectItemByNumber(number).map(itm -> {
-    // int indexOfItemToUpdate = DB.indexOf(itm);
-    // if (indexOfItemToUpdate >= 0) {
-    // DB.set(indexOfItemToUpdate, new Item(number, itm.getName(), newAmount,
-    // itm.getInventoryCode()));
-    // return 1;
-    // }
-    // return 0;
-    // }).orElse(0);
-    // }
 }

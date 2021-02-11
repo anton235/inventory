@@ -61,10 +61,4 @@ public class ItemController {
     public void updateItem(@PathVariable("number") Integer number, @RequestBody Item itemToUpdate) {
         itemService.updateItem(number, itemToUpdate);
     }
-
-    // @PutMapping(path = "{number}")
-    // public void updateItemAmountByNumber(@PathVariable("number") Integer number,
-    // @RequestBody Integer newAmount) {
-    // itemService.updateItemAmountByNumber(number, newAmount);
-    // }
 }

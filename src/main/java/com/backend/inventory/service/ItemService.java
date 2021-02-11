@@ -48,8 +48,4 @@ public class ItemService {
     public int updateItem(Integer number, Item item) {
         return itemDao.updateItemByNumber(number, item);
     }
-
-    // public int updateItemAmountByNumber(Integer number, Integer newAmount) {
-    // return itemDao.updateItemAmountByNumber(number, newAmount);
-    // }
 }
