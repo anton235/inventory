@@ -48,4 +48,12 @@ public class ItemService {
     public int updateItem(Integer number, Item item) {
         return itemDao.updateItemByNumber(number, item);
     }
+
+    public int withdrawalItemAmount(Integer number, Integer withdrawalAmount) {
+        return itemDao.withdrawalItemAmountByNumber(number, withdrawalAmount);
+    }
+
+    public int depositItemAmount(Integer number, Integer depositAmount) {
+        return itemDao.depositItemAmountByNumber(number, depositAmount);
+    }
 }

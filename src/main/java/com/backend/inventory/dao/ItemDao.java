@@ -25,4 +25,8 @@ public interface ItemDao {
     int deleteItemByNumber(Integer number);
 
     int updateItemByNumber(Integer number, Item item);
+
+    int withdrawalItemAmountByNumber(Integer number, Integer withdrawalAmount);
+
+    int depositItemAmountByNumber(Integer number, Integer depositAmount);
 }

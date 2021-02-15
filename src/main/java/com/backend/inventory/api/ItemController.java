@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RequestMapping("api/v1/items")
@@ -60,5 +61,17 @@ public class ItemController {
     @PutMapping(path = "{number}")
     public void updateItem(@PathVariable("number") Integer number, @RequestBody Item itemToUpdate) {
         itemService.updateItem(number, itemToUpdate);
+    }
+
+    // http://localhost:8083/api/v1/items/1/withdraw?amount=4
+    @PutMapping(path = "{number}/withdraw")
+    public void withdrawalItemAmount(@PathVariable("number") Integer number, @RequestParam Integer amount) {
+        itemService.withdrawalItemAmount(number, amount);
+    }
+
+    // http://localhost:8083/api/v1/items/1/deposit?amount=4
+    @PutMapping(path = "{number}/deposit")
+    public void depositItemAmount(@PathVariable("number") Integer number, @RequestParam Integer amount) {
+        itemService.depositItemAmount(number, amount);
     }
 }
