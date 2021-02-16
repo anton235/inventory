@@ -9,14 +9,14 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-@Repository("fakeDao")
+@Repository("h2Datasource")
 public class FakeItemDataAccessService implements ItemDao {
 
     private static List<Item> DB = new ArrayList<>();
 
     @Override
-    public int insertItem(UUID inventoryCode, Item item) {
-        DB.add(new Item(item.getNumber(), item.getName(), item.getAmount(), inventoryCode));
+    public int insertItem(Item item) {
+        DB.add(new Item(item.getNumber(), item.getName(), item.getAmount(), item.getInventoryCode()));
         return 1;
     }
 

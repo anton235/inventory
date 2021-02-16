@@ -21,7 +21,7 @@ public class Item {
     private String name;
     private Integer amount;
     @Column(unique = true)
-    private final UUID inventoryCode;
+    private UUID inventoryCode;
 
     public Item(@JsonProperty("number") Integer number, @JsonProperty("name") String name,
             @JsonProperty("amount") Integer amount, @JsonProperty("inventoryCode") UUID inventoryCode) {
@@ -57,5 +57,9 @@ public class Item {
 
     public UUID getInventoryCode() {
         return inventoryCode;
+    }
+
+    public void setInventoryCode(UUID inventoryCode) {
+        this.inventoryCode = inventoryCode;
     }
 }

@@ -17,7 +17,7 @@ public class ItemService {
     private final ItemDao itemDao;
 
     @Autowired
-    public ItemService(@Qualifier("fakeDao") ItemDao itemDao) {
+    public ItemService(@Qualifier("h2Datasource") ItemDao itemDao) {
         this.itemDao = itemDao;
     }
 

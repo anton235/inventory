@@ -1,6 +1,7 @@
 package com.backend.inventory.api;
 
 import java.util.List;
+import java.util.UUID;
 
 import com.backend.inventory.model.Item;
 import com.backend.inventory.service.ItemService;
@@ -32,8 +33,10 @@ public class ItemController {
 
     @PostMapping
     public void addItem(@RequestBody Item item) {
-        Item newItem = itemRepository.save(item);
-        itemService.addItem(newItem);
+        UUID inventoryCode = UUID.randomUUID();
+        item.setInventoryCode(inventoryCode);
+        itemRepository.save(item);
+        itemService.addItem(item);
     }
 
     @GetMapping

@@ -7,11 +7,8 @@ import java.util.UUID;
 import com.backend.inventory.model.Item;
 
 public interface ItemDao {
-    int insertItem(UUID inventoryCode, Item item);
-
     default int insertItem(Item item) {
-        UUID inventoryCode = UUID.randomUUID();
-        return insertItem(inventoryCode, item);
+        return insertItem(item);
     }
 
     List<Item> selectAllItems();
